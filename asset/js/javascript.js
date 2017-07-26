@@ -65,23 +65,28 @@ var listaTareas = [
  var html = "";
  for (var i =0; i<listaTareas.length;i++){
   var dato_1 = listaTareas[i];
-  //alert (dato_1);
   var s = "<li>"+ dato_1.title +"</li>";
   html += s;
- }
+ } 
 var lista = document.getElementById('list');
 lista.innerHTML = html;
 
 function add() {
-  var etiquetali = document.createElement("li");
-  var nuevaTarea = document.getElementById("newTarea").value;
-  var contenidoEtiqueta = document.createTextNode(nuevaTarea);
+  var etiquetali = document.createElement("li");  //Creamos una etiqueta li
+  var nuevaTarea = document.getElementById("newTarea").value; 
+  var contenidoEtiqueta = document.createTextNode(nuevaTarea); 
   etiquetali.appendChild(contenidoEtiqueta);
   document.getElementById("list").appendChild(etiquetali);
   document.getElementById("newTarea").value = "";
   var pushArray = {
   title: nuevaTarea,
+  completed :false,
   }
   listaTareas.push(pushArray);
+  }
+  function tachar() {
+    var etiqueta = document.getElementsByTagName('li');//llamamos todos los elemento li del documento
   
-}
+    for (var i = 0; i < listaTareas.length; i++)
+      if()listaTareas[i].completed == false
+    }
