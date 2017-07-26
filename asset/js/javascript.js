@@ -93,6 +93,17 @@ function Lista(title) {
 function add(){
   var nuevaTarea = document.getElementById("newTarea").value;
   var tareas = new Lista(nuevaTarea);
-  console.log(Lista);
   listaTareas.push(tareas);
+  mostrar();
   }
+
+function mostrar() {
+      var stringHtml = "";
+        for (var i in listaTareas) {
+         console.log (listaTareas);
+         stringHtml += "<li >" +  listaTareas[i].title +  "</li>";
+         }
+      var n = document.getElementById('list');
+      n.innerHTML = stringHtml;
+   }
+
