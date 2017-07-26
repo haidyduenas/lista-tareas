@@ -105,7 +105,7 @@ function mostrar() {
       if(listaTareas[i].completed){
       stringHtml += "<li >"+ "<del>" +"<input type='checkbox'>"+  listaTareas[i].title +  "</del>"+"</li>";
       }else{
-        stringHtml += "<li >" +"<input type='checkbox'>"+  listaTareas[i].title +  "</li>";
+        stringHtml += "<li>" +"<input type='checkbox'>"+  listaTareas[i].title +  "</li>";
       }
     }
       var n = document.getElementById('list');
@@ -113,4 +113,13 @@ function mostrar() {
    
   }
 
+  var lis=document.getElementsByTagName("li");
+  for (var i =0;i< lis.length; i++) {
+    var a =lis[i];
+    a.addEventListener("click",tachar)
+  }
 
+  function tachar (event){
+
+   event.target.style.textDecoration="line-through";
+  }
