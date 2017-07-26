@@ -61,8 +61,7 @@ var listaTareas = [
   }
 ]
 
-
- var html = "";
+var html = "";
  for (var i =0; i<listaTareas.length;i++){
   var dato_1 = listaTareas[i];
   var s = "<li>"+ dato_1.title +"</li>";
@@ -71,7 +70,7 @@ var listaTareas = [
 var lista = document.getElementById('list');
 lista.innerHTML = html;
 
-function add() {
+/*function add() {
   var etiquetali = document.createElement("li");  //Creamos una etiqueta li
   var nuevaTarea = document.getElementById("newTarea").value; 
   var contenidoEtiqueta = document.createTextNode(nuevaTarea); 
@@ -84,9 +83,16 @@ function add() {
   }
   listaTareas.push(pushArray);
   }
-  function tachar() {
-    var etiqueta = document.getElementsByTagName('li');//llamamos todos los elemento li del documento
-  
-    for (var i = 0; i < listaTareas.length; i++)
-      if()listaTareas[i].completed == false
-    }
+*/
+function Lista(title) {
+  this.title = title;
+  this.completed=false;
+}
+
+
+function add(){
+  var nuevaTarea = document.getElementById("newTarea").value;
+  var tareas = new Lista(nuevaTarea);
+  console.log(Lista);
+  listaTareas.push(tareas);
+  }
