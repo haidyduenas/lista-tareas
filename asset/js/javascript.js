@@ -89,6 +89,7 @@ function Lista(title) {
   this.completed=false;
 }
 
+mostrar();
 
 function add(){
   var nuevaTarea = document.getElementById("newTarea").value;
@@ -99,11 +100,17 @@ function add(){
 
 function mostrar() {
       var stringHtml = "";
-        for (var i in listaTareas) {
-         console.log (listaTareas);
-         stringHtml += "<li >" +  listaTareas[i].title +  "</li>";
-         }
+      for (var i in listaTareas) {
+      console.log (listaTareas);
+      if(listaTareas[i].completed){
+      stringHtml += "<li >"+ "<del>" +"<input type='checkbox'>"+  listaTareas[i].title +  "</del>"+"</li>";
+      }else{
+        stringHtml += "<li >" +"<input type='checkbox'>"+  listaTareas[i].title +  "</li>";
+      }
+    }
       var n = document.getElementById('list');
       n.innerHTML = stringHtml;
-   }
+   
+  }
+
 
